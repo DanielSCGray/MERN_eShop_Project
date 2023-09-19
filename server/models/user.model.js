@@ -3,58 +3,63 @@ const mongoose = require('mongoose');
 //change all occurance from user
 
 const UserSchema = new mongoose.Schema({
-    strkey: {
+    firstName: {
         type: String,
-        required: [true, 'Strkey is required'],
-        minlength: [5, 'Strkey must be at least 5 characters']
+        required: [true, 'First Name is required'],
+        minlength: [2, 'First Name must be at least 2 characters']
     },
-    strkey: {
+    lastName: {
         type: String,
-        required: [true, 'Strkey is required'],
-        minlength: [5, 'Strkey must be at least 5 characters']
+        required: [true, 'Last Name is required'],
+        minlength: [5, 'Last Name must be at least 5 characters']
     },
-    strkey: {
+    email: {
         type: String,
-        required: [true, 'Strkey is required'],
-        minlength: [5, 'Strkey must be at least 5 characters']
+        required: [true, 'Email is required'],
+        minlength: [5, 'Email must be at least 5 characters']
+    },
+    password: {
+        type: String,
+        required: [true, 'Password is required'],
+        minlength: [2, 'Password must be at least 2 characters']
     },
     address: {
-        strkey: {
+        street: {
             type: String,
-            required: [true, 'Strkey is required'],
-            minlength: [5, 'Strkey must be at least 5 characters']
+            required: [true, 'Street is required'],
+            minlength: [5, 'Street must be at least 5 characters']
         },
-        strkey: {
+        city: {
             type: String,
-            required: [true, 'Strkey is required'],
-            minlength: [5, 'Strkey must be at least 5 characters']
+            required: [true, 'City is required'],
+            minlength: [5, 'City must be at least 5 characters']
         },
-        strkey: {
+        state: {
             type: String,
-            required: [true, 'Strkey is required'],
-            minlength: [5, 'Strkey must be at least 5 characters']
+            required: [true, 'State is required'],
+            minlength: [2, 'State must be at least 2 characters']
         },
-        strkey: {
+        zipcode: {
             type: String,
-            required: [true, 'Strkey is required'],
-            minlength: [5, 'Strkey must be at least 5 characters']
+            required: [true, 'Zipcode is required'],
+            minlength: [5, 'Zipcode must be at least 5 characters']
         }
         },
     payment: {
-        strkey: {
+        cardName: {
             type: String,
-            required: [true, 'Strkey is required'],
-            minlength: [5, 'Strkey must be at least 5 characters']
+            required: [true, 'CardName is required'],
+            minlength: [5, 'CardName must be at least 5 characters']
         },
-        strkey: {
+        cardNumber: {
             type: String,
-            required: [true, 'Strkey is required'],
-            minlength: [5, 'Strkey must be at least 5 characters']
+            required: [true, 'CardNumber is required'],
+            minlength: [5, 'CardNumber must be at least 5 characters']
         },
-        strkey: {
+        expiration: {
             type: String,
-            required: [true, 'Strkey is required'],
-            minlength: [5, 'Strkey must be at least 5 characters']
+            required: [true, 'Expiration is required'],
+            minlength: [5, 'Expiration must be at least 5 characters']
         }
     },
     cart: []
