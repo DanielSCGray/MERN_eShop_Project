@@ -5,7 +5,9 @@ import { useNavigate } from 'react-router-dom';
 const UserInfoForm = (props) => {
 
     //STRUCTURE: each form data point gets a state, a prop to set it to, and gets called by props.action
-
+    // const [vari, setVari] = useState('');
+    // <label className="form-label">Vari:</label>
+    // <input className="form-control" value={vari} onChange={(e)=> {setVari(e.target.value)}} />
     const [name, setName] = useState('');
     const navigate = useNavigate();
     //a __Name prop can be entered through the views page using the form

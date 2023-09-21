@@ -13,9 +13,9 @@ export const NavBar = () => {
             </div>
             <div>
         <Link to={'/home'}>Home</Link>
-        <Link to={'/'}>My account</Link>
-        <Link to={'/'}>Shop</Link>
-        <Link to={'/'}>Shopping Cart</Link>
+        <Link to={'/account'}>My account</Link>
+        <Link to={'/search'}>Shop</Link>
+        <Link to={'/cart'}>Shopping Cart</Link>
             </div>
         
 

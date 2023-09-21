@@ -23,11 +23,6 @@ const GrillSchema = new mongoose.Schema({
         required: [true, 'Brand is required'],
         minlength: [2, 'Brand must be at least 2 characters']
     },
-    size: {
-        type: String,
-        required: [true, 'Size is required'],
-        minlength: [2, 'Size must be at least 2 characters']
-    },
     price: {
         type: Number,
         required: [true, 'Price is required'],

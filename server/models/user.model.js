@@ -32,7 +32,7 @@ const UserSchema = new mongoose.Schema({
         city: {
             type: String,
             required: [true, 'City is required'],
-            minlength: [5, 'City must be at least 5 characters']
+            minlength: [2, 'City must be at least 2 characters']
         },
         state: {
             type: String,
