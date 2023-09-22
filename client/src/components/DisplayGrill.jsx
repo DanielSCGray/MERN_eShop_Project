@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 const DisplayGrill = (props) => {
 
-    const [grill, setGrill] = useState();
+    const [grill, setGrill] = useState({});
     const [user, setUser] = useState();
     const navigate = useNavigate();
 
@@ -17,6 +17,7 @@ const DisplayGrill = (props) => {
 
     useEffect( () => { axios.get(`http://localhost:8000/api/grills/${gId}`)
     .then(res => {
+        
         console.log(res.data)
         setGrill(res.data)
         console.log('grill get done')
@@ -25,12 +26,17 @@ const DisplayGrill = (props) => {
     }, []);
 
     const addToCart = (targetID) => {
-    axios.patch(`http://localhost:8000/api/users/${uId}`, {cart: thisUser.cart.push(targetID)})
-            .then(res => navigate(`/shoppingcart/${uId}`))
+    axios.patch(`http://localhost:8000/api/users/${uId}`, {cart: [...thisUser.cart, targetID]})
+            .then(res => {
+                console.log(res.data)
+                navigate(`/shoppingcart/${uId}`)
+            })
         .catch(err => console.log(err))
 }
     if (grill) {
-        
+        console.log(grill)
+        console.log('2')
+        console.log(grill._id)
         return (
             <div>
                 <div>
