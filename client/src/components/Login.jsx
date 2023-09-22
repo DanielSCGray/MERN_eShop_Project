@@ -8,7 +8,7 @@ const Login = (props) => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [userObj, setUserObj] = useState({});
+    
     const navigate = useNavigate();
     
     
@@ -17,6 +17,7 @@ const Login = (props) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        props.action(email)
         
         // get user by email - check that user.email == email state
         //check that user.password == input password

@@ -33,7 +33,7 @@ const GrillSchema = new mongoose.Schema({
         required: [true, 'Burners is required'],
         min: [1, 'Grill must have at least one Burner']
     },
-    totalStock: {
+    stock: {
         type: Number,
         required: [true, 'TotalStock is required'],
         min: [0, 'TotalStock must not be negative']

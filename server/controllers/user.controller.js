@@ -22,6 +22,12 @@ module.exports.findOneUser = (req, res) => {
         })
         .catch(err =>res.json(err));
 }
+module.exports.findByEmail = (req, res) =>{
+    User.findOne({email: req.params.email})
+        .then(user => {
+            res.json(user)
+        })
+}
 
 // create
 
