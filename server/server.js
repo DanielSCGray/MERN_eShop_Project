@@ -20,8 +20,8 @@ app.use(cors(), express.json(), express.urlencoded({extended: true}));
 const UserRoutes = require('./routes/user.routes');
 UserRoutes(app);
 
-const ProductRoutes = require('./routes/product.routes');
-ProductRoutes(app);
+const GrillRoutes = require('./routes/grill.routes');
+GrillRoutes(app);
 
 
 

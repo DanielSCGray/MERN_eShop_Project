@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 import { GrillList } from '../components/GrillList';
 
 const Home = () => {
@@ -13,17 +14,19 @@ const Home = () => {
         .catch(err => console.log(err))
     })
 
-
-    return (
-        <div>
-            <h1>Welcome, {user.firstName}</h1>
-
-            <h3>Consume!</h3>
-            <GrillList user={user} />
-            
+    if (user) {
         
-        </div>
-    )
+        return (
+            <div>
+                <h1>Welcome, {user.firstName}</h1>
+    
+                <h3>Consume!</h3>
+                <GrillList user={user} />
+                
+            
+            </div>
+        )
+    }
 }
 
 export default Home

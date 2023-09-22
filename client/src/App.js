@@ -1,6 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import LoginV from './views/LoginV';
+import Home from './views/Home';
+import Shop from './views/Shop';
+import ShoppingCart from './views/ShoppingCart';
+import AddUser from './views/AddUser';
+import AddGrill from './views/AddGrill';
 
 function App() {
     return (
@@ -12,6 +17,8 @@ function App() {
                 <Route path='/home/:id' element={<Home />} />
                 <Route path='/shop/:uId/:gId' element={<Shop />} />
                 <Route path='/shoppingcart/:id' element={<ShoppingCart />} />
+                <Route path='/adduser' element={<AddUser />} />
+                <Route path='/addgrill' element={<AddGrill />} />
             </Routes>
 
         </div>

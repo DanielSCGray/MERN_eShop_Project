@@ -45,23 +45,23 @@ const UserSchema = new mongoose.Schema({
             minlength: [5, 'Zipcode must be at least 5 characters']
         }
         },
-    payment: {
-        cardName: {
-            type: String,
-            required: [true, 'CardName is required'],
-            minlength: [5, 'CardName must be at least 5 characters']
-        },
-        cardNumber: {
-            type: String,
-            required: [true, 'CardNumber is required'],
-            minlength: [5, 'CardNumber must be at least 5 characters']
-        },
-        expiration: {
-            type: String,
-            required: [true, 'Expiration is required'],
-            minlength: [5, 'Expiration must be at least 5 characters']
-        }
-    },
+    // payment: {
+    //     cardName: {
+    //         type: String,
+    //         required: [true, 'CardName is required'],
+    //         minlength: [5, 'CardName must be at least 5 characters']
+    //     },
+    //     cardNumber: {
+    //         type: String,
+    //         required: [true, 'CardNumber is required'],
+    //         minlength: [5, 'CardNumber must be at least 5 characters']
+    //     },
+    //     expiration: {
+    //         type: String,
+    //         required: [true, 'Expiration is required'],
+    //         minlength: [5, 'Expiration must be at least 5 characters']
+    //     }
+    // },
     cart: []
 
 }, {timestamps: true});

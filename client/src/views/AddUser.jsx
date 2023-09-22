@@ -1,13 +1,15 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useParams, useNavigate } from 'react-router-dom';
 
 
-const UserInfoForm = (props) => {
 
-    //STRUCTURE: each form data point gets a state, a prop to set it to, and gets called by props.action
+const AddUser = () => {
+
+    
+    const navigate = useNavigate();
     const [firstName, setFirstName] = useState('');
-
-
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -19,24 +21,29 @@ const UserInfoForm = (props) => {
     const [currentUser, setCurrentUser] = useState();
 
 
-
-    
-    const navigate = useNavigate();
-    //a __Name prop can be entered through the views page using the form
-    let thisUser = props.User;
-    //this conditional allows us to populate fields when editing + ignore when creating
-    if (!firstName && thisUser) {
-        setCurrentUser(thisUser)
-    }
-
-
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(name)
+        axios.post('http://localhost:8000/api/users', 
+        {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            password: password,
+            address: {
+                street: street,
+                city: city, 
+                state: state,
+                zipcode: zipcode
+            }
+        })
+        .then(res=> {
+            console.log(res.data);
+            navigate(`/home/${res.data._id}`)
+        })
+        .catch(err => console.log(err))
         //the action function is specified on views page (likely a create or edit)
         //add each form field after name as needed
-        props.action(firstName, lastName, email, password, street, city, state, zipcode)
+        
     }
 
 
@@ -79,4 +86,5 @@ const UserInfoForm = (props) => {
         </div>
     )
 }
-export default UserInfoForm;
+
+export default AddUser

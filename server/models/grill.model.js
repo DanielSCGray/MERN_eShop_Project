@@ -40,7 +40,6 @@ const GrillSchema = new mongoose.Schema({
     },
     inStock: {
         type: Boolean,
-        required: [true, 'InStock is required'],
         default: true
     }
 }, {timestamps: true});
