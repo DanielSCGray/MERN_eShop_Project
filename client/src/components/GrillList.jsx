@@ -21,7 +21,7 @@ export const GrillList = (props) => {
 
     return (
         <div>
-            <h1>All Grills:</h1>
+            
             
 
                 <table className='table'>

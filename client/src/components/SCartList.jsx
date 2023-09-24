@@ -9,8 +9,8 @@ const SCartList = (props) => {
     const [productList, setProductList] = useState([]);
 
     const listBuilder = arr => {
-        arr.forEach(product => {
-            axios.get(`http://localhost:8000/api/grills/${product._id}`)
+        arr.forEach(productId => {
+            axios.get(`http://localhost:8000/api/grills/${productId}`)
                 .then(res => {
                     console.log(res.data);
                     console.log('prduct data above?')

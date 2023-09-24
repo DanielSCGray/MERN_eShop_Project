@@ -10,7 +10,8 @@ import AddGrill from './views/AddGrill';
 function App() {
     return (
         <div className="App">
-            <h1>Title</h1>
+            <h1>Crazy Jane's BBQ Emporium</h1>
+            <h3>Grilling done well prevents grilling well done!</h3>
 
             <Routes>
                 <Route path='/' element={<LoginV />} />
@@ -26,3 +27,7 @@ function App() {
 }
 
 export default App;
+
+/*
+user tom _id : 650dbaff8328c33771e6c625
+*/

@@ -23,10 +23,10 @@ module.exports.findOneUser = (req, res) => {
         .catch(err =>res.json(err));
 }
 module.exports.findByEmail = (req, res) =>{
-    User.findOne({email: req.params.email})
+    User.findOne({email: req.params.email1})
         .then(user => {
             res.json(user)
-        })
+        }).catch(err=>res.json(err))
 }
 
 // create

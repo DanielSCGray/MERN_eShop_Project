@@ -8,8 +8,8 @@ const LoginV = () => {
     const navigate = useNavigate();
 
     // const[user, setUser] = useState();
-    const userLogin = email => {
-        axios.get(`http://localhost:8000/api/email/${email}`)
+    const userLogin = email1 => {
+        axios.get(`http://localhost:8000/api/users/email/${email1}`)
         .then(res => navigate(`/home/${res.data._id}`))
         .catch(err=>console.log(err))
     }

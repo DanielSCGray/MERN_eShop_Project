@@ -26,7 +26,7 @@ const DisplayGrill = (props) => {
     }, []);
 
     const addToCart = (targetID) => {
-    axios.patch(`http://localhost:8000/api/users/${uId}`, {cart: [...thisUser.cart, targetID]})
+    axios.patch(`http://localhost:8000/api/users/${uId}`, {cart: [...thisUser.cart, String(targetID)]})
             .then(res => {
                 console.log(res.data)
                 navigate(`/shoppingcart/${uId}`)
